@@ -1,0 +1,8 @@
+package control;
+
+public enum Clubes {
+	
+	CLUBE_DA_CIÊNCIA_DA_COMPUTAÇÃO, CLUBE_DE_BIOLOGIA, CLUBE_DE_BILHAR,
+	CLUBE_SEM_SONO, CLUBE_DE_DEGUSTAÇÃO_DE_VINHOS;
+	
+}
