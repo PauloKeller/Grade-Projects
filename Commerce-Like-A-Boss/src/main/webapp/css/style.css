@@ -1,0 +1,218 @@
+body {
+	margin: 0 auto;
+	width: 100%;
+	font-family: lato;
+	color: #fff;
+	background-color: #535c68;
+}
+
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+header li {
+    float: left;
+}
+
+header li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+header li a:hover:not(.active) {
+    background-color: #111;
+}
+
+header .active {
+    background-color: #4CAF50;
+}
+
+section .title-container {
+	background-color: #00cec9;
+	height: 50px;
+	padding: 10px;
+	margin: 0;
+}
+
+section .title-container h1{
+	margin: 10px 0px 0px 0px ;
+}
+
+section .loyal-clients-container {	
+	background-color: #535c68;
+}
+
+section .loyal-client-container {
+	display: inline-block;
+	magin: 14px;
+	padding: 14px;	
+}
+
+section .loyal-client-image-container {
+	border: 2px solid #fff;
+	background-color: #00b894;
+}
+
+section .loyal-client-container img {
+	border-radius: 50%;
+	width: 250px;
+	height: 250px;
+	margin: 10px;
+	padding: 10px;
+}
+
+section .loyal-client-info-container {
+	margin: 10px 0px 10px 0px;
+	border: 2px solid white;
+	padding: 9px;
+	background-color: #00b894;
+}
+
+section .top-ratings-container {
+	background-color: #535c68;
+	magin: 10px;
+	padding: 10px;
+}
+
+section .top-rating-container {
+	display: inline-block;
+	width: 200px;
+	padding: 20px;
+	margin: 10px;
+	border: 2px solid white;
+	background-color: #00b894;
+}
+
+section .top-rating-container img {
+	height: 70px;
+	width: 70px;
+}
+
+section .clients-container {
+	padding: 20px;
+}
+
+section .client-container {
+	padding: 10px;
+	margin: 20px;
+	background-color: #a29bfe;
+}
+
+section .client-image-container {
+	display: inline-block; 
+	padding: 5px;
+	margin: 5px;
+	width: 130px;
+	height: 130px;
+}
+
+section .client-image-container img {
+	width: 100px;
+	height: 100px;
+	padding: 10px;
+	margin: 10px;
+	border-radius: 50%;
+}
+
+section .client-info-container {
+	display: inline-block; 
+	width: 180px;
+	margin: 0px 50px 0px 130px;
+	font-size: 20px;
+}
+
+section .client-info-container p {
+	margin: 6px;
+}
+
+section .ratings-container {
+	text-align:center;
+	margin: 15px;
+	padding: 10px;
+}
+
+section .rating-container {
+	display: inline-block;
+	width: 200px;
+	padding: 20px;
+	margin: 10px;
+	border: 2px solid white;
+	background-color: #00b894;
+}
+
+section .rating-image-container img {
+	height: 70px;
+	width: 70px;
+	margin: auto;
+}
+
+section .rating-info-container {
+	text-align:left;
+}
+
+footer {
+	margin: 0 auto;
+	width: 100%;
+	background-color: #000;
+}
+
+footer .author-container {
+	margin: 10px;
+	padding: 10px;
+	text-align:center;
+	display: block;
+	margin: auto;
+}
+
+footer .author-container h3 {
+	margin: 0 auto;
+}
+
+footer .info-container {
+	margin: 0 auto;
+}
+
+footer .fatec-logo-container {
+	display: inline-block;
+	padding: 10px;
+	margin: 10px;
+}
+
+
+footer .git-container {
+	display: inline-block;
+	padding: 10px;
+	margin: 10px;
+}
+
+footer .email-container {
+	text-align: center;
+	display: inline-block;
+	padding: 10px;
+	margin: 10px;
+}
+
+footer .fatec-logo {
+	height: 100px;
+	width: 200px;
+}
+
+footer .git-logo {
+	height: 50px;
+	width: 50px;
+}
+
+
+
+
+
+
+
+
