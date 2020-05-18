@@ -1,34 +1,53 @@
+import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class App {
-    int alunoCount = 0;
-    final Aluno[] turma = new Aluno[30];
-    Scanner myObj = new Scanner(System.in);
-    String userName = myObj.nextLine();
+    static int alunoCount = 0;
+    final static Aluno[] turma = new Aluno[30];
 
     public static void main(String[] args) {
 
 
-    }
-
-    public Options handleInput(String input) {
-        switch (input) {
-            case "1":
-                return Options.ADD;
-            case "2":
-                return Options.EDIT;
-            case "3":
-                return Options.FIND_BY_MATRICULA;
-            case "4":
-                return Options.FIND_BY_NOME;
-            case "5":
-                return Options.REMOVE;
-            default:
-                return Options.UKNOWN;
+        for (int index = 0; index <= 29; index++) {
+            final Aluno aluno = new Aluno(index, "Aluno" + index, "Curso-" + index, new Double[]{
+                    new Random().nextDouble(),
+                    new Random().nextDouble(),
+                    new Random().nextDouble(),
+                    new Random().nextDouble()
+            });
+            turma[index] = aluno;
         }
+        System.out.println(Arrays.toString(turma));
+
+        final Aluno alunoEditado = editarAluno("Aluno3", "Novo Nome", "Novo curso", new Double[]{0.3, 7.0, 8.5, 9.0});
+        System.out.println("Aluno editado: " + alunoEditado.toString());
+
+        final Aluno procurarAlunoPeloNome = findAlunoByName("Aluno7");
+        if (procurarAlunoPeloNome != null) {
+            System.out.println("Aluno por nome: " + procurarAlunoPeloNome.toString() );
+        }
+
+        final Aluno procurarAlunoPelaMatricula = findAlunoByMatricula(9);
+        if (procurarAlunoPelaMatricula != null) {
+            System.out.println("Aluno por matricula: " + procurarAlunoPelaMatricula.toString() );
+        }
+
+        if(removerAluno("Aluno8")) {
+            System.out.println("Aluno excluido!");
+        }
+
+        if (!adicionarAluno(15, "Aluno ja Matriculado", "Curso-15", new Double[]{0.0, 0.0, 0.0, 0.0})){
+            System.out.println("Aluno já matriculado!");
+        }
+
+        if (adicionarAluno(99, "Novo Matriculado", "Curso-10", new Double[]{0.0, 0.0, 0.0, 0.0})){
+            System.out.println("Aluno matriculado!");
+        }
+
     }
 
-    public Aluno findAlunoByName(String nome) {
+    static public Aluno findAlunoByName(String nome) {
         for (Aluno aluno : turma) {
             if (aluno.nome.equals(nome)) {
                 return aluno;
@@ -37,21 +56,26 @@ public class App {
         return null;
     }
 
-    public Aluno findAlunoByMatricula(int matricula) {
+    static public Aluno findAlunoByMatricula(int matricula) {
         for (Aluno aluno : turma) {
-            if (aluno.matricula == matricula) {
-                return aluno;
+            if (aluno != null) {
+                if (aluno.matricula == matricula) {
+                    return aluno;
+                }
             }
         }
         return null;
     }
 
-    public Aluno editarAluno(String nome) {
+    static public Aluno editarAluno(String nome, String novoNome, String novoCurso, Double[] novasNotas) {
         final Aluno aluno = findAlunoByName(nome);
+        aluno.nome = novoNome;
+        aluno.curso = novoCurso;
+        aluno.notas = novasNotas;
         return aluno;
     }
 
-    public boolean removerAluno(String nome) {
+    static public boolean removerAluno(String nome) {
         int index = 0;
         boolean hasAluno = false;
         for (Aluno aluno : turma) {
@@ -71,7 +95,7 @@ public class App {
         }
     }
 
-    public boolean adicionarAluno(int matricula, String nome, String curso, Double[] notas) {
+   static public boolean adicionarAluno(int matricula, String nome, String curso, Double[] notas) {
         Aluno aluno = findAlunoByMatricula(matricula);
         if (aluno != null) return false;
         alunoCount++;
