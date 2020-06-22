@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CalculableImplTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2020-05-28T00:29:37" hostname="paulo" time="0.002">
+  <properties/>
+  <testcase name="testCalculoFigurasGeometricas[0: figuras.Circulo@6c05a697 = expected: {2}]" classname="CalculableImplTest" time="0.001"/>
+  <testcase name="testCalculoFigurasGeometricas[1: figuras.Cubo@57d79cbf = expected: {2}]" classname="CalculableImplTest" time="0.0"/>
+  <testcase name="testCalculoFigurasGeometricas[2: figuras.Hexagono@1627a9cc = expected: {2}]" classname="CalculableImplTest" time="0.0"/>
+  <testcase name="testCalculoFigurasGeometricas[3: figuras.Losango@6abb4f98 = expected: {2}]" classname="CalculableImplTest" time="0.0"/>
+  <testcase name="testCalculoFigurasGeometricas[4: figuras.Paralelograma@153ee332 = expected: {2}]" classname="CalculableImplTest" time="0.0"/>
+  <testcase name="testCalculoFigurasGeometricas[5: figuras.Quadrado@7e67b74e = expected: {2}]" classname="CalculableImplTest" time="0.0"/>
+  <testcase name="testCalculoFigurasGeometricas[6: figuras.Retangulo@55251887 = expected: {2}]" classname="CalculableImplTest" time="0.0"/>
+  <testcase name="testCalculoFigurasGeometricas[7: figuras.Trapezio@65d25a34 = expected: {2}]" classname="CalculableImplTest" time="0.001"/>
+  <testcase name="testCalculoFigurasGeometricas[8: figuras.Triangulo@71702cf = expected: {2}]" classname="CalculableImplTest" time="0.0"/>
+  <testcase name="testCalculoFigurasGeometricas[9: figuras.Cilindro@448908a4 = expected: {2}]" classname="CalculableImplTest" time="0.0"/>
+  <testcase name="testCalculoFigurasGeometricas[10: figuras.Esfera@3915d192 = expected: {2}]" classname="CalculableImplTest" time="0.0"/>
+  <testcase name="testCalculoFigurasGeometricas[11: figuras.Prisma@4ee13f7e = expected: {2}]" classname="CalculableImplTest" time="0.0"/>
+  <testcase name="testCalculoFigurasGeometricas[12: figuras.Piramide@71df4d17 = expected: {2}]" classname="CalculableImplTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
