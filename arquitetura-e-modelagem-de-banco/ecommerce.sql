@@ -7,7 +7,8 @@ CREATE TABLE users (
   first_name VARCHAR(100) NOT NULL,
   last_name VARCHAR(100) NOT NULL,
   username VARCHAR(50) NOT NULL UNIQUE,
-  email VARCHAR(50) NOT NULL UNIQUE
+  email VARCHAR(50) NOT NULL UNIQUE,
+  is_premium BOOLEAN DEFAULT false
 );
 
 CREATE TABLE products (
