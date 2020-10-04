@@ -5,62 +5,71 @@ VALUES ('Zezinho','Zé','zezinho','test@zezinho.com');
 INSERT INTO users (first_name,last_name,username,email) 
 VALUES ('Zezao','Zé','zezao','test@zezao.com');
 
-INSERT INTO products (name,description,stock) 
+INSERT INTO product (name,description,stock) 
 VALUES ('camiseta','camiseta dahora',10);
-INSERT INTO products (name,description,stock) 
+INSERT INTO product (name,description,stock) 
 VALUES ('jaqueta','jaqueta dahora',3);
-INSERT INTO products (name,description,stock) 
+INSERT INTO product (name,description,stock) 
 VALUES ('camisa','camisa dahora',8);
-INSERT INTO products (name,description,stock) 
+INSERT INTO product (name,description,stock) 
 VALUES ('tenis','tenis de robozão',1);
 
-INSERT INTO prices (value, product_id)
-VALUES (50.50, '36d5781c-cc98-4759-b1f1-375c86fdb888');
-INSERT INTO prices (value, product_id)
-VALUES (99.00, 'ff03e781-1c27-4322-a7f7-aabd1cd0cdad');
-INSERT INTO prices (value, product_id)
-VALUES (39.20, '96fe5679-d0cb-4663-a115-6dde0f9634b7');
-INSERT INTO prices (value, product_id)
-VALUES (50.20, '96fe5679-d0cb-4663-a115-6dde0f9634b7');
-INSERT INTO prices (value, product_id)
-VALUES (3000.00, '9bbe4c43-0aa5-4825-8dbd-e36d24a9f6dc');
+INSERT INTO price (value, product_id)
+VALUES (50.50, '3659c8be-f41e-4c05-9875-8e57397c90fa');
+INSERT INTO price (value, product_id)
+VALUES (99.00, 'e7cf9d36-eaf7-48e4-a0c9-dc49a8e5c8e0');
+INSERT INTO price (value, product_id)
+VALUES (39.20, '3058b5b1-1577-4abc-8cf1-f6a25aea5eae');
+INSERT INTO price (value, product_id)
+VALUES (50.20, '3058b5b1-1577-4abc-8cf1-f6a25aea5eae');
+INSERT INTO price (value, product_id)
+VALUES (3000.00, 'b08ceac2-7e2f-4473-9d43-1f318d47e161');
 
-INSERT INTO addresses (country,state,street,number) 
-VALUES ('BRASIL','RIO DE JANEIRO','OUTRA RUA QUALQUER','23A');
-INSERT INTO addresses (country,state,street,complement,number)
-VALUES ('BRASIL','SAO PAULO','RUA QUALQUER','Próximo ao mercadinho','23');
-INSERT INTO addresses (country,state,street,complement,number)
-VALUES ('BRASIL','RIO DE JANEIRO','MAIS UMA RUA QUALQUER','Apartamento','30C');
-INSERT INTO addresses (country,state,street,complement,number)
-VALUES ('BRASIL','ESPIRITO SANTO','MAIS UMA RUA QUALQUER','Casa','10');
+INSERT INTO country (name) 
+VALUES ('BRASIL');
+
+INSERT INTO state (name, country_id) 
+VALUES ('SAO PAULO', 'f8d7cfe9-71da-408c-85cf-c1bdf3c2b6c5');
+INSERT INTO state (name, country_id) 
+VALUES ('RIO DE JANEIRO', 'f8d7cfe9-71da-408c-85cf-c1bdf3c2b6c5');
+
+INSERT INTO address (state_id,street,complement,number) 
+VALUES ('793a4076-011e-4dc8-8af1-3d0b7a95cfc8','MAIS UMA RUA QUALQUER','apartamento','23A');
+INSERT INTO address (state_id,street,complement,number) 
+VALUES ('793a4076-011e-4dc8-8af1-3d0b7a95cfc8','OUTRA RUA QUALQUER','apartamento','30C');
+INSERT INTO address (state_id,street,complement,number) 
+VALUES ('510d817a-9737-4938-a50e-a8a523b7c736','RUA QUALQUER','casa','23');
 
 INSERT INTO orders (user_id,shipping_address)
-VALUES ('a871b6ad-b2a8-4cf1-8c48-14243926c199','6da6e468-3fd4-4f43-87fa-3cfecb3c343c');
+VALUES ('2774fbde-b25f-45c4-aa3e-802ddde0ea3a','710869db-86dc-47ea-ae2d-041223484c69');
 INSERT INTO orders (user_id,shipping_address)
-VALUES ('e51765d6-4f68-4064-8f4c-adc0a769626c','56ff1bf0-831c-43ee-95b9-fe696dd83722');
+VALUES ('52ebf62e-3c50-4a74-8eaa-1a15bf5cdb11','dfe9a8c9-07c1-4fa7-8faf-c82ea18b5559');
 INSERT INTO orders (user_id,shipping_address)
-VALUES ('85d91524-72cc-4511-83b8-84a7383343e7','d18f2490-8e9f-4a58-8eea-ccf0baa3a3a5');
+VALUES ('cb43ecdf-7003-40bc-b1c1-fdb71897d6bd','f5c7ab00-df34-43f1-a87d-d1ae78006853');
 
 INSERT INTO order_details (order_id,product_id,quantity,free_shipping)
-VALUES ('ebc65ce7-821c-4750-b8c3-11caef2e880a','36d5781c-cc98-4759-b1f1-375c86fdb888', 3, false);
+VALUES ('a4569d3c-b039-4e0e-87ae-e076ff0ea2d5','710869db-86dc-47ea-ae2d-041223484c69', 3, false);
 INSERT INTO order_details (order_id,product_id,quantity,free_shipping)
-VALUES ('51568489-9ada-41a8-b85e-c55b299faa76','96fe5679-d0cb-4663-a115-6dde0f9634b7', 4, false);
+VALUES ('6030831c-c363-4696-b848-947f0756cd0f','3058b5b1-1577-4abc-8cf1-f6a25aea5eae', 4, false);
 INSERT INTO order_details (order_id,product_id,quantity,free_shipping)
-VALUES ('c1c206d2-1a04-4e36-9e4b-b6588b955d16','9bbe4c43-0aa5-4825-8dbd-e36d24a9f6dc', 1, true);
+VALUES ('8a3ecf01-5484-401d-914a-5ce14b3f2e1d','dfe9a8c9-07c1-4fa7-8faf-c82ea18b5559', 1, true);
+
+UPDATE orders 
+SET shipping_address = '3058b5b1-1577-4abc-8cf1-f6a25aea5eae' 
+WHERE order_id = '6030831c-c363-4696-b848-947f0756cd0f';
 
 SELECT order_details_id
 FROM order_details
-WHERE free_shipping = true;
+WHERE order_id = '2774fbde-b25f-45c4-aa3e-802ddde0ea3a';
 
 SELECT value, ROUND(AVG(value),2)
-FROM prices
+FROM price
 GROUP BY value;
 
-SELECT * FROM prices
+SELECT * FROM price
 ORDER BY date DESC;
 
-SELECT name, value, date, quantity, stock, free_shipping, buy_at FROM
-(( order_details LEFT JOIN products ON products.product_id = order_details.product_id)
-LEFT JOIN prices ON prices.product_id = order_details.product_id
-LEFT JOIN orders ON orders.order_id = order_details.order_id)
-WHERE buy_at BETWEEN buy_at AND timezone('utc' :: TEXT, now());
+SELECT name, value, description, date, stock
+FROM product
+LEFT JOIN price
+ON product.product_id = price.product_id;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WriterTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-05-27T23:49:07" hostname="paulo" time="0.006">
+<testsuite name="WriterTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-07-01T23:57:55" hostname="paulo" time="0.001">
   <properties/>
-  <testcase name="shouldReadValidFile" classname="WriterTest" time="0.006"/>
+  <testcase name="shouldReadValidFile" classname="WriterTest" time="0.001"/>
   <system-out><![CDATA[Successfully wrote to the file.
 Successfully wrote to the file.
 Successfully wrote to the file.
