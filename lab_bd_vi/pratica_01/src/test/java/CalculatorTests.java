@@ -15,12 +15,17 @@ public class CalculatorTests {
 
   @Test
   public void testComplexLogarithm() {
-    Complex base = new Complex(2.0, 2.0);
-    Complex logNumber = new Complex(4.0, 1);
-    Complex expected = new Complex(2.0, 0.0);
+    Complex base = buildComplexNumber(2.0, 2.0);
+    Complex logNumber = buildComplexNumber(4.0, 1);
+    Complex expected = buildComplexNumber(2.0, 0.0);
+
     Complex stub = Calculator.complexLog(base, logNumber);
 
     assertEquals(stub.real(), expected.real());
     assertEquals(stub.imag(), expected.imag());
+  }
+
+  private Complex buildComplexNumber(double real, double imaginary) {
+    return new Complex(real, imaginary);
   }
 }
