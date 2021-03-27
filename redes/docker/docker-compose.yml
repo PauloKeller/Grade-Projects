@@ -1,0 +1,35 @@
+version: '3'
+services:
+  back-end:
+    container_name: back-end
+    build:
+      context: back-end/
+      dockerfile: Dockerfile
+    ports: 
+      - 5000:5000
+    restart: on-failure
+    volumes:
+      - back-end:/usr/src/app/
+    networks: 
+      - api-network
+
+  front-end:
+    container_name: front-end
+    build:
+      context: front-end/
+      dockerfile: Dockerfile
+    restart: on-failure
+    volumes:
+      - front-end:/usr/src/app/
+    networks: 
+      - api-network
+    depends_on:
+      - back-end
+     
+networks:
+  api-network:
+  
+
+volumes:
+  front-end:
+  back-end:
