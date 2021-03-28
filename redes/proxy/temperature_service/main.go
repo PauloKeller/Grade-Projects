@@ -30,5 +30,5 @@ func main() {
 	})
 
 	handler := cors.Default().Handler(mux)
-	http.ListenAndServe(":5001", handler)
+	http.ListenAndServe("0.0.0.0:5001", handler)
 }

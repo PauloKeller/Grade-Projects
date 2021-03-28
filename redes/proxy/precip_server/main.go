@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"io"
 	"math/rand"
 	"net/http"
 	"strconv"
@@ -18,16 +17,11 @@ type Precip struct {
 	Type         string `json:"type"`
 }
 
-func hello(res http.ResponseWriter, req *http.Request) {
-	io.WriteString(res, "Hello paulo")
-}
-
 func main() {
 	router := mux.NewRouter()
-	router.HandleFunc("/{temp}", func(w http.ResponseWriter, r *http.Request) {
-		params := mux.Vars(r)
-		v := params["temp"]
-		temp, err := strconv.Atoi(v)
+	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		key := r.FormValue("temp")
+		temp, err := strconv.Atoi(key)
 
 		if err != nil {
 			temp = 23
@@ -60,5 +54,5 @@ func main() {
 	})
 
 	handler := cors.Default().Handler(router)
-	http.ListenAndServe(":5002", handler)
+	http.ListenAndServe("0.0.0.0:5002", handler)
 }

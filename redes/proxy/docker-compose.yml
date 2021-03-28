@@ -4,7 +4,49 @@ services:
   reverse-proxy:
     image: nginx:1.17.10
     container_name: reverse_proxy_demo
+    depends_on:
+        - weather-report
+        - temperature-service
+        - precip-service
     volumes:
       - ./reverse_proxy/nginx.conf:/etc/nginx/nginx.conf
     ports:
       - 80:80
+
+  weather-report:
+    container_name: weather-report
+    build:
+      context: ./weather_report
+    volumes:
+      - weather-report:/usr/src/app/
+    depends_on:
+        - temperature-service
+        - precip-service
+    ports:
+      - 8080:80
+    restart: on-failure
+
+  temperature-service:
+    container_name: temperature-service
+    build:
+      context: ./temperature_service
+    volumes:
+      - temperature-service:/usr/src/app/
+    ports:
+      - 5001:5001
+    restart: on-failure
+
+  precip-service:
+    container_name: precip-service
+    build:
+      context: ./precip_server
+    volumes:
+      - precip-service:/usr/src/app/
+    ports:
+      - 5002:5002
+    restart: on-failure
+
+volumes:
+  precip-service:
+  temperature-service:
+  weather-report:
