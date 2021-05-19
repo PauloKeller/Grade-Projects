@@ -1,47 +1,25 @@
-- download openvpn
+- install openvpn
 
 ```
-git clone https://github.com/kylemanna/docker-openvpn.git
+sudo apt install openvpn curl
 ```
 
-- create a new docker image 
+- download openvpn installer 
 
 ```
-docker build -t myownvpn .
+curl -O https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-install.sh
+chmod +x openvpn-install.sh
 ```
 
-- create folder to store config file 
+- install vpn server
 
 ```
-mkdir vpn-data && touch vpn-data/vars
+sudo ./openvpn-install.sh
 ```
 
-- generate OpenVPN config file 
-# CHANGE TO YOUR IP ADDRESS!!
-
+- for client 
 ```
-docker run -v $PWD/vpn-data:/etc/openvpn --rm myownvpn ovpn_genconfig -u udp://IP_ADDRESS:3000
+sudo apt install openvpn networkmanager-openvpn-gnome
 ```
 
-- init PKI and generate CA certificate
-
-```
-docker run -v $PWD/vpn-data:/etc/openvpn --rm -it myownvpn ovpn_initpki
-```
-
-- run the VPN 
-
-```
-docker run -v $PWD/vpn-data:/etc/openvpn -d -p 3000:1194/udp --cap-add=NET_ADMIN myownvpn
-```
-
-- create the VPN user
-
-```
-docker run -v $PWD/vpn-data:/etc/openvpn --rm -it myownvpn easyrsa build-client-full user1 nopass
-```
-- connect to vpn
-
-```
-sudo openvpn --config FILENAME
-```
+- send de vpn file from the server (.ovpn file)
